@@ -9,10 +9,37 @@
 
 Web-App Link: https://html-notes-app.herokuapp.com/
 
+<p align="center">
+  <img src="./screenshots/0.png" width=350>
+</p>
+
 Postman Import Link: https://www.getpostman.com/collections/5ef0343a019f2df6c1ab
 
 <p align="center">
-  <img src="./screenshots/0.png" width=300>
+  <img src="./screenshots/1.png" width=350>
+</p>
+
+## How to deploy to yourself heroku platform?
+
+- Fork this repository
+- Login to heroku website
+- Create a new heroku app
+- Select your new app then go to ```Resources``` tab, search and add ```Heroku Postgres``` add-on
+
+<p align="center">
+  <img src="./screenshots/2.png" width=350>
+</p>
+
+- After add-on added, click at ```Heroku Postgres``` then go to add-on ```Settings``` tab to view credentials
+
+<p align="center">
+  <img src="./screenshots/3.jpg" width=350>
+</p>
+
+- Then go back to app details page, go to app's ```Settings``` tab then reveal config, fill config var like this using your own add-on credential
+
+<p align="center">
+  <img src="./screenshots/4.jpg" width=350>
 </p>
 
 ## How to run locally?
