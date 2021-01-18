@@ -10,7 +10,7 @@
 Web-App Link: https://html-notes-app.herokuapp.com/
 
 <p align="center">
-  <img src="./screenshots/0.png" width=350>
+  <img src="./screenshots/0.png">
 </p>
 
 Postman Import Link: https://www.getpostman.com/collections/5ef0343a019f2df6c1ab
@@ -24,23 +24,45 @@ Postman Import Link: https://www.getpostman.com/collections/5ef0343a019f2df6c1ab
 - Fork this repository
 - Login to heroku website
 - Create a new heroku app
+- Select your new app then go to ```Deploy``` tab, connect to your forked GitHub repo, don't forget check automatic deploy and press deploy branch
+
+<p align="center">
+  <img src="./screenshots/2.png">
+</p>
+
 - Select your new app then go to ```Resources``` tab, search and add ```Heroku Postgres``` add-on
 
 <p align="center">
-  <img src="./screenshots/2.png" width=350>
+  <img src="./screenshots/3.png">
 </p>
 
 - After add-on added, click at ```Heroku Postgres``` then go to add-on ```Settings``` tab to view credentials
 
 <p align="center">
-  <img src="./screenshots/3.jpg" width=350>
+  <img src="./screenshots/4.jpg">
 </p>
+
+- Run the ```Heroku CLI``` command at command prompt (cmd) or terminal to access PostgreSQL Database then create ```notes``` table like code below (You need to install Heroku CLI to do this)
+
+```
+CREATE TABLE notes (
+  ID SERIAL PRIMARY KEY,
+  owner_id  INT NOT NULL,
+  text_value TEXT
+);
+```
+
+- Run ```\q``` to quit PostgreSQL Database terminal
 
 - Then go back to app details page, go to app's ```Settings``` tab then reveal config, fill config var like this using your own add-on credential
 
 <p align="center">
-  <img src="./screenshots/4.jpg" width=350>
+  <img src="./screenshots/5.jpg">
 </p>
+
+- Your web-app and API is now live, congrats!!!
+
+- Click ```Open app``` button on the right top to view the web-app
 
 ## How to run locally?
 
