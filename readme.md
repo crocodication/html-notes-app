@@ -10,7 +10,7 @@
 Web-App Link: https://html-notes-app.herokuapp.com/
 
 <p align="center">
-  <img src="./screenshots/0.png">
+  <img src="./screenshots/0.png" width=350>
 </p>
 
 Postman Import Link: https://www.getpostman.com/collections/5ef0343a019f2df6c1ab
@@ -60,7 +60,7 @@ CREATE TABLE notes (
   <img src="./screenshots/5.jpg">
 </p>
 
-- Your web-app and API is now live, congrats!!!
+- Your web-app and API is now live, congrats!!! You can edit the codebase by yourself.
 
 - Click ```Open app``` button on the right top to view the web-app
 
