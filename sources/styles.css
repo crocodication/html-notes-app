@@ -1,0 +1,141 @@
+body {
+  align-items: center;
+  background-color: dimgray;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+a {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0px;
+}
+
+h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0px;
+}
+
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0px;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  background-color: gainsboro;
+  height: calc(100vh - 40px);
+  max-width: 500px;
+  width: 100%;
+}
+
+.title {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.notes-list {
+  background-color: rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 20px;
+  overflow: scroll;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.note-container {
+  align-items: center;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.note {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.delete-button {
+  background-color: black;
+  border-radius: 5px;
+  color: red;
+  font-size: 8px;
+  font-weight: bold;
+  height: 10px;
+  margin-left: 5px;
+  padding: 5px;
+  text-align: center;
+  text-decoration-line: none;
+  width: 10px;
+}
+
+.bottom-options-container {
+  align-items: center;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.15);
+  justify-content: center;
+  padding: 20px;
+}
+
+.create-new-note {
+  background-color: forestgreen;
+  color: white;
+  display: block;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  text-decoration-line: none;
+  width: 175px;
+}
+
+.create-new-note:hover {
+  background-color: lightgreen;
+}
+
+.loader-container {
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.loader-background {
+  background-color: rgba(0, 34, 85, 0.95);
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  pointer-events: fill;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.loader {
+  align-self: center;
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
