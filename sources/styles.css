@@ -134,7 +134,7 @@ p {
 
 .loader {
   align-self: center;
-  border: 10px solid #f3f3f3; /* Light grey */
+  border: 10px solid rgb(75, 5, 55); /* Light grey */
   border-top: 10px solid #d670b9; /* Blue */
   border-radius: 50%;
   width: 45px;
