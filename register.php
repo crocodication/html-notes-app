@@ -13,30 +13,35 @@
     <script>
       const id = localStorage.getItem('id')
 
-      if(id == undefined) {
-        redirect(`/login`)
-      }
-
-      window.onload = () => {
-        loadNotes()
+      if(id != undefined) {
+        redirect(`/`)
       }
     </script>
   </head>
 
   <body>
     <div
-      class="page-container"
+      class="non-session-page-container"
     >
       <p
         class="title"
       >
-        Notes App
+        Register To Notes App
       </p>
-      
+
       <div
         class="content-container"
-        id="notes-list"
       >
+        <input
+          class="non-session-input"
+          placeholder="Username"
+        >
+
+        <input
+          class="non-session-input"
+          placeholder="Password"
+          type="password"
+        >
       </div>
 
       <div
@@ -45,25 +50,11 @@
         <a
           class="bottom-option"
           href="#"
-          onclick="createNewNote()"
+          onclick="register()"
         >
-          Create New Note
-        </a>
-
-        <a
-          class="bottom-option"
-          href="#"
-          onclick="logout()"
-        >
-          Logout
+          Submit
         </a>
       </div>
-    </div>
-
-    <div
-      class="loader-container"
-      id="loader-container"
-    >
     </div>
   </body>
 </html>

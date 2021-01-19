@@ -1,6 +1,10 @@
 const baseURL = './api'
 const useURLExtension = location.hostname === 'localhost' || location.hostname === '127.0.0.1' ? '.php' : ''
 
+const redirect = endpoint_destination => {
+  window.location = `${endpoint_destination}${endpoint_destination == '/' ? '' : useURLExtension}`
+}
+
 let notes = []
 
 const loadNotes = () => {
@@ -170,13 +174,19 @@ const rerenderLoader = (isLoading) => {
 }
 
 const login = () => {
-  alert('Login')
+  localStorage.setItem('id', 999)
+
+  window.location = `/`
 }
 
 const register = () => {
   alert('Register')
+
+  redirect(`/login`)
 }
 
 const logout = () => {
-  alert('Logout')
+  localStorage.removeItem('id')
+
+  window.location = `/login${useURLExtension}`
 }

@@ -38,7 +38,7 @@ textarea {
   padding: 1%;
 }
 
-.login-page-container {
+.non-session-page-container {
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@ textarea {
   overflow: hidden;
 }
 
-.login-input {
+.non-session-input {
   margin-bottom: 20px;
 }
 

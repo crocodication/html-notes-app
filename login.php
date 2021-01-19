@@ -9,11 +9,19 @@
     <link rel="stylesheet" href="./styles.css">
 
     <script src="./actions.js"></script>
+
+    <script>
+      const id = localStorage.getItem('id')
+
+      if(id != undefined) {
+        redirect(`/`)
+      }
+    </script>
   </head>
 
   <body>
     <div
-      class="login-page-container"
+      class="non-session-page-container"
     >
       <p
         class="title"
@@ -25,12 +33,12 @@
         class="content-container"
       >
         <input
-          class="login-input"
+          class="non-session-input"
           placeholder="Username"
         >
 
         <input
-          class="login-input"
+          class="non-session-input"
           placeholder="Password"
           type="password"
         >
@@ -50,7 +58,7 @@
         <a
           class="bottom-option"
           href="#"
-          onclick="register()"
+          onclick="redirect('/register')"
         >
           Register
         </a>
