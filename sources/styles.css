@@ -120,7 +120,7 @@ p {
 }
 
 .loader-background {
-  background-color: rgba(0, 34, 85, 0.95);
+  background-color: rgba(15, 10, 13, 0.95);
   bottom: 0;
   display: flex;
   flex-direction: column;
@@ -135,7 +135,7 @@ p {
 .loader {
   align-self: center;
   border: 10px solid #f3f3f3; /* Light grey */
-  border-top: 10px solid #3498db; /* Blue */
+  border-top: 10px solid #d670b9; /* Blue */
   border-radius: 50%;
   width: 45px;
   height: 45px;
