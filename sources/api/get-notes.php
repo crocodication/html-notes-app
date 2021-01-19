@@ -33,7 +33,7 @@
     exit;
   }
 
-  $result['data'] = pg_fetch_all(pg_query($dbconn, "SELECT * FROM notes WHERE owner_id = " . $params['owner_id'] . " ORDER BY id DSC;"));
+  $result['data'] = pg_fetch_all(pg_query($dbconn, "SELECT * FROM notes WHERE owner_id = " . $params['owner_id'] . " ORDER BY id DESC;"));
 
   echo json_encode($result);
 ?>
