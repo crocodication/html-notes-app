@@ -29,14 +29,14 @@ p {
   display: flex;
   flex-direction: column;
   background-color: gainsboro;
-  height: calc(100vh - 40px);
-  max-width: 500px;
+  height: 100%;
   width: 100%;
 }
 
 .title {
   align-self: center;
   display: flex;
+  font-size: 2em;
   flex-direction: column;
   margin-top: 20px;
 }
@@ -92,11 +92,12 @@ p {
   background-color: forestgreen;
   color: white;
   display: block;
+  font-size: 1em;
   font-weight: bold;
   padding: 10px;
   text-align: center;
   text-decoration-line: none;
-  width: 175px;
+  width: 50%;
 }
 
 .create-new-note:hover {
