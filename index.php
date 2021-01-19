@@ -43,6 +43,14 @@
         >
           Create New Note
         </a>
+
+        <a
+          class="bottom-option"
+          href="#"
+          onclick="logout()"
+        >
+          Logout
+        </a>
       </div>
     </div>
 

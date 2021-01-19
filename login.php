@@ -46,6 +46,14 @@
         >
           Login
         </a>
+
+        <a
+          class="bottom-option"
+          href="#"
+          onclick="register()"
+        >
+          Register
+        </a>
       </div>
     </div>
   </body>

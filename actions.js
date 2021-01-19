@@ -172,3 +172,11 @@ const rerenderLoader = (isLoading) => {
 const login = () => {
   alert('Login')
 }
+
+const register = () => {
+  alert('Register')
+}
+
+const logout = () => {
+  alert('Logout')
+}
