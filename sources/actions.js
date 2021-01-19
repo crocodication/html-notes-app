@@ -4,16 +4,6 @@ const useURLExtension = location.hostname === 'localhost' || location.hostname =
 let notes = []
 
 window.onload = () => {
-  for(let i = 0; i < 15; i++) {
-    notes.push({
-      id: i,
-      text_value: 'Test ini contoh catatan'
-    })
-  }
-
-  rerenderNotes()
-
-  return
   rerenderLoader(true)
 
   fetch(
