@@ -4,6 +4,19 @@ const useURLExtension = location.hostname === 'localhost' || location.hostname =
 let notes = []
 
 window.onload = () => {
+  if(window.location.toString().startsWith('http://localhost')) {
+    for(let id = 0; id < 15; id++) {
+      notes.push({
+        id,
+        text_value: 'Ini adalah contoh sample note'
+      })
+    }
+
+    rerenderNotes()
+
+    return
+  }
+
   rerenderLoader(true)
 
   fetch(
@@ -106,14 +119,12 @@ const rerenderNotes = () => {
       <div
         class="note-container"
       >
-        <input
+        <textarea
           class="note"
+          rows="10"
           id="note-${note.id}"
-          name="notes[]"
           placeholder="Insert note..."
-          type="text"
-          value="${note.text_value}"
-        >
+        >${note.text_value}</textarea>
 
         <a
           class="delete-button"
