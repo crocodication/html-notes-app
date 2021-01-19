@@ -45,7 +45,7 @@
     exit;
   }
 
-  $result['data'] = pg_fetch_all(pg_query($dbconn, "SELECT * FROM notes ORDER BY id ASC;"));
+  $result['data'] = pg_fetch_all(pg_query($dbconn, "SELECT * FROM notes ORDER BY id DSC;"));
 
   echo json_encode($result);
 ?>
