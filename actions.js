@@ -1,9 +1,9 @@
-const baseURL = './sources/api'
+const baseURL = './api'
 const useURLExtension = location.hostname === 'localhost' || location.hostname === '127.0.0.1' ? '.php' : ''
 
 let notes = []
 
-window.onload = () => {
+const loadNotes = () => {
   if(window.location.toString().startsWith('http://localhost')) {
     for(let id = 0; id < 15; id++) {
       notes.push({
@@ -167,4 +167,8 @@ const rerenderLoader = (isLoading) => {
     </div>`
     :
     ``
+}
+
+const login = () => {
+  alert('Login')
 }

@@ -1,12 +1,20 @@
+<!DOCTYPE html>
+
 <html>
   <head>
     <title>
       Notes App
     </title>
 
-    <link rel="stylesheet" href="./sources/styles.css">
+    <link rel="stylesheet" href="./styles.css">
 
-    <script src="./sources/actions.js"></script>
+    <script src="./actions.js"></script>
+
+    <script>
+      window.onload = () => {
+        loadNotes()
+      }
+    </script>
   </head>
 
   <body>
@@ -20,27 +28,21 @@
       </p>
       
       <div
-        class="notes-list"
+        class="content-container"
         id="notes-list"
       >
-      
       </div>
 
       <div
         class="bottom-options-container"
       >
         <a
-          class="create-new-note"
+          class="bottom-option"
           href="#"
           onclick="createNewNote()"
         >
           Create New Note
         </a>
-
-        <div
-          id="submit-button-container"
-        >
-        </div>
       </div>
     </div>
 
