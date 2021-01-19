@@ -23,8 +23,10 @@ const loadNotes = () => {
 
   rerenderLoader(true)
 
+  const owner_id = localStorage.getItem('id')
+
   fetch(
-    `${baseURL}/get-notes${useURLExtension}?owner_id=${999}`
+    `${baseURL}/get-notes${useURLExtension}?owner_id=${owner_id}`
   )
   .then(res => res.text())
   .then(resText => {
@@ -50,12 +52,14 @@ const loadNotes = () => {
 const createNewNote = () => {
   rerenderLoader(true)
 
+  const owner_id = localStorage.getItem('id')
+
   fetch(
     `${baseURL}/create-new-note${useURLExtension}`,
     {
       method: 'POST',
       body: JSON.stringify({
-        owner_id: 999
+        owner_id
       })
     }
   )
@@ -176,7 +180,7 @@ const rerenderLoader = (isLoading) => {
 const login = () => {
   localStorage.setItem('id', 999)
 
-  window.location = `/`
+  redirect(`/`)
 }
 
 const register = () => {
@@ -188,5 +192,5 @@ const register = () => {
 const logout = () => {
   localStorage.removeItem('id')
 
-  window.location = `/login${useURLExtension}`
+  redirect(`login`)
 }
