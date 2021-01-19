@@ -82,7 +82,7 @@ textarea {
   justify-content: center;
   font-size: 1.5vh;
   font-weight: bold;
-  height: calc(100% - 10px);
+  height: calc(100% - 20px);
   margin-left: 10px;
   padding: calc(1% + 2.5px);
   text-align: center;
