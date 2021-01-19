@@ -13,11 +13,11 @@
     <div
       class="page-container"
     >
-      <h1
+      <p
         class="title"
       >
         Notes App
-      </h1>
+      </p>
       
       <div
         class="notes-list"

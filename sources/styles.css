@@ -10,16 +10,6 @@ a {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h1 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin: 0px;
-}
-
-h3 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin: 0px;
-}
-
 p {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0px;
@@ -36,8 +26,9 @@ p {
 .title {
   align-self: center;
   display: flex;
-  font-size: 2em;
   flex-direction: column;
+  font-weight: bold;
+  font-size: calc(16px + 1.5vh);
   margin-top: 20px;
 }
 
@@ -57,27 +48,32 @@ p {
 .note-container {
   align-items: center;
   display: flex;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .note {
   display: flex;
   flex: 1;
   flex-direction: column;
+  font-size: 1.85vh;
+  padding: 1%;
 }
 
 .delete-button {
+  align-items: center;
+  display: flex;
   background-color: black;
   border-radius: 5px;
   color: red;
-  font-size: 8px;
+  justify-content: center;
+  font-size: 1.5vh;
   font-weight: bold;
-  height: 10px;
-  margin-left: 5px;
-  padding: 5px;
+  height: 1.85vh;
+  margin-left: 10px;
+  padding: calc(1% + 2.5px);
   text-align: center;
   text-decoration-line: none;
-  width: 10px;
+  width: 1.85vh;
 }
 
 .bottom-options-container {
@@ -92,12 +88,14 @@ p {
   background-color: forestgreen;
   color: white;
   display: block;
-  font-size: 1em;
+  font-size: calc(4px + 1.5vh);
   font-weight: bold;
-  padding: 10px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
   text-align: center;
   text-decoration-line: none;
-  width: 50%;
 }
 
 .create-new-note:hover {
@@ -139,4 +137,10 @@ p {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@media (orientation:landscape) {
+  .page-container {
+    max-width: 500px;
+  }
 }
