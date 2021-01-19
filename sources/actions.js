@@ -121,7 +121,7 @@ const rerenderNotes = () => {
       >
         <textarea
           class="note"
-          rows="10"
+          rows="7"
           id="note-${note.id}"
           placeholder="Insert note..."
         >${note.text_value}</textarea>
