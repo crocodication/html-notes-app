@@ -194,6 +194,9 @@ const login = (username, password) => {
       const resJSON = JSON.parse(resText)
 
       console.log(username, password, JSON.stringify(resJSON, null, 2))
+
+      // localStorage.setItem('id', 1)
+      // redirect(`/`)
     } else {
       console.error(resText)
     }
@@ -203,8 +206,6 @@ const login = (username, password) => {
 
     console.error(err.toString())
   })
-
-  redirect(`/`)
 }
 
 const register = () => {

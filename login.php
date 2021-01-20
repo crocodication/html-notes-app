@@ -73,5 +73,11 @@
         </a>
       </div>
     </div>
+
+    <div
+      class="loader-container"
+      id="loader-container"
+    >
+    </div>
   </body>
 </html>
