@@ -10,14 +10,14 @@
 Web-App Link: https://html-notes-app.herokuapp.com/
 
 <p align="center">
-  <img src="./screenshots/0.png" width=200>
-  <img src="./screenshots/1.png" width=200>
+  <img src="./screenshots/0.png" width=300>
+  <img src="./screenshots/1.png" width=300>
 </p>
 
 Postman Import Link: https://www.getpostman.com/collections/5ef0343a019f2df6c1ab
 
 <p align="center">
-  <img src="./screenshots/2.png" width=350>
+  <img src="./screenshots/2.png" width=250>
 </p>
 
 ## How to deploy to yourself heroku platform?
