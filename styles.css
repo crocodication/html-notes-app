@@ -125,7 +125,7 @@ textarea {
   border-radius: 5px;
   color:white; 
   display: block;
-  font-size: calc(4px + 1.5vh);
+  font-size: calc(4px + 1vh);
   font-weight: bold;
   padding-bottom: 10px;
   padding-left: 25px;
