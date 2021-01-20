@@ -288,5 +288,40 @@ const logout = () => {
 }
 
 const deleteAccount = (username, password, confirm_password) => {
-  alert('Delete Account', username, password, confirm_password)
+  rerenderLoader(true)
+
+  fetch(
+    `${baseURL}/session/delete-account${useURLExtension}`,
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        username,
+        password,
+        confirm_password
+      })
+    }
+  )
+  .then(res => res.text())
+  .then(resText => {
+    rerenderLoader(false)
+
+    if(resText[0] == "{") {
+      const resJSON = JSON.parse(resText)
+
+      alert(resJSON['api_message'])
+
+      if(resJSON['api_status'] == 1) {
+        localStorage.removeItem('id')
+
+        redirect(`/login`)
+      }
+    } else {
+      alert(resText)
+    }
+  })
+  .catch(err => {
+    rerenderLoader(false)
+
+    alert(err.toString())
+  })
 }
