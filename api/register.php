@@ -16,7 +16,7 @@
   include '../helpers/retrieve-post-params.php';
   $params = retrieve_post_params($_POST, file_get_contents('php://input'));
 
-  if (!isset($params['username'])) {
+  if (!isset($params['username']) || $params['username'] == '') {
     $result['api_status'] = 0;
     $result['api_message'] = 'username parameter is required';
 
@@ -25,7 +25,7 @@
     exit;
   }
 
-  if (!isset($params['password'])) {
+  if (!isset($params['password']) || $params['password'] == '') {
     $result['api_status'] = 0;
     $result['api_message'] = 'password parameter is required';
 
@@ -34,7 +34,7 @@
     exit;
   }
 
-  if (!isset($params['confirm_password'])) {
+  if (!isset($params['confirm_password']) || $params['confirm_password'] == '') {
     $result['api_status'] = 0;
     $result['api_message'] = 'confirm_password parameter is required';
 
