@@ -20,9 +20,7 @@
       
       let username = '', password = ''
       
-      const submitLogin = () => {
-        login(username, password)
-      }
+      const submitLogin = () => login(username, password)
       
       window.onload = () => {
         document.getElementById(`username-input`).addEventListener('input', event => username = event.target.value)

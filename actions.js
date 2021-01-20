@@ -213,7 +213,7 @@ const login = (username, password) => {
   })
 }
 
-const register = (username, password) => {
+const register = (username, password, confirm_password) => {
   rerenderLoader(true)
 
   fetch(
@@ -222,7 +222,8 @@ const register = (username, password) => {
       method: 'POST',
       body: JSON.stringify({
         username,
-        password
+        password,
+        confirm_password
       })
     }
   )

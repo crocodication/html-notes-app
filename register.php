@@ -17,15 +17,14 @@
         redirect(`/`)
       }
 
-      let username = '', password = ''
+      let username = '', password = '', confirm_password = ''
       
-      const submitRegister = () => {
-        register(username, password)
-      }
+      const submitRegister = () => register(username, password, confirm_password)
       
       window.onload = () => {
         document.getElementById(`username-input`).addEventListener('input', event => username = event.target.value)
         document.getElementById(`password-input`).addEventListener('input', event => password = event.target.value)
+        document.getElementById(`confirm-password-input`).addEventListener('input', event => confirm_password = event.target.value)
       }
     </script>
   </head>
@@ -53,6 +52,13 @@
           class="non-session-input"
           id="password-input"
           placeholder="Password"
+          type="password"
+        >
+
+        <input
+          class="non-session-input"
+          id="confirm-password-input"
+          placeholder="Confirm Password"
           type="password"
         >
       </div>
