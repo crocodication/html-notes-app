@@ -12,7 +12,7 @@ const loadNotes = () => {
     for(let id = 0; id < 15; id++) {
       notes.push({
         id,
-        text_value: 'Ini adalah contoh sample note'
+        text: 'Ini adalah contoh sample note'
       })
     }
 
@@ -23,10 +23,8 @@ const loadNotes = () => {
 
   rerenderLoader(true)
 
-  const owner_id = localStorage.getItem('id')
-
   fetch(
-    `${baseURL}/get-notes${useURLExtension}?owner_id=${owner_id}`
+    `${baseURL}/notes/get-notes${useURLExtension}?owner_id=${localStorage.getItem('id')}`
   )
   .then(res => res.text())
   .then(resText => {
@@ -52,14 +50,12 @@ const loadNotes = () => {
 const createNewNote = () => {
   rerenderLoader(true)
 
-  const owner_id = localStorage.getItem('id')
-
   fetch(
-    `${baseURL}/create-new-note${useURLExtension}`,
+    `${baseURL}/notes/create-new-note${useURLExtension}`,
     {
       method: 'POST',
       body: JSON.stringify({
-        owner_id
+        owner_id: localStorage.getItem('id')
       })
     }
   )
@@ -88,10 +84,11 @@ const deleteButton = id => {
   rerenderLoader(true)
 
   fetch(
-    `${baseURL}/delete-note${useURLExtension}`,
+    `${baseURL}/notes/delete-note${useURLExtension}`,
     {
       method: 'POST',
       body: JSON.stringify({
+        owner_id: localStorage.getItem('id'),
         id
       })
     }
@@ -132,7 +129,7 @@ const rerenderNotes = () => {
           rows="7"
           id="note-${note.id}"
           placeholder="Insert note..."
-        >${note.text_value}</textarea>
+        >${note.text}</textarea>
 
         <a
           class="delete-button"
@@ -149,15 +146,16 @@ const rerenderNotes = () => {
     const input = document.getElementById(`note-${note.id}`)
   
     input.addEventListener('input', event => {
-      note.text_value = event.target.value
+      note.text = event.target.value
       
       fetch(
-        `${baseURL}/edit-note${useURLExtension}`,
+        `${baseURL}/notes/edit-note${useURLExtension}`,
         {
           method: 'POST',
           body: JSON.stringify({
+            owner_id: localStorage.getItem('id'),
             id: note.id,
-            text_value: event.target.value
+            text: event.target.value
           })
         }
       )
@@ -178,7 +176,7 @@ const rerenderLoader = (isLoading) => {
 }
 
 const login = () => {
-  localStorage.setItem('id', 999)
+  localStorage.setItem('id', 1)
 
   redirect(`/`)
 }

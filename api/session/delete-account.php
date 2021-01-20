@@ -80,6 +80,17 @@
     exit;
   }
 
+  $processing_delete_notes = pg_query($dbconn, "DELETE FROM notes WHERE owner_id = " . $params['id'] . ";");
+
+  if (!$processing_delete_notes) {
+    $result['api_status'] = 0;
+    $result['api_message'] = 'Failed on processing data';
+
+    echo json_encode($result);
+
+    exit;
+  }
+
   $processing_data = pg_query($dbconn, "DELETE FROM users WHERE id = " . $params['id'] . ";");
 
   if (!$processing_data) {

@@ -59,7 +59,7 @@ CREATE TABLE users (
 CREATE TABLE notes (
   ID SERIAL PRIMARY KEY,
   owner_id  INT NOT NULL,
-  text_value TEXT,
+  text TEXT,
   created_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
 ```
