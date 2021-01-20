@@ -15,7 +15,7 @@
   include '../helpers/retrieve-post-params.php';
   $params = retrieve_post_params($_POST, file_get_contents('php://input'));
 
-  if (!isset($params['id'])) {
+  if (!isset($params['id']) || $params['id'] == '') {
     $result['api_status'] = 0;
     $result['api_message'] = 'id parameter is required';
 
