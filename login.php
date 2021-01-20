@@ -32,7 +32,7 @@
   </head>
 
   <body>
-    <div
+    <form
       class="non-session-page-container"
     >
       <p
@@ -77,7 +77,7 @@
           Register
         </a>
       </div>
-    </div>
+    </form>
 
     <div
       class="loader-container"

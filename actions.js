@@ -220,7 +220,38 @@ const register = () => {
 }
 
 const logout = () => {
-  localStorage.removeItem('id')
+  rerenderLoader(true)
 
-  redirect(`login`)
+  fetch(
+    `${baseURL}/session/logout${useURLExtension}`,
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        id: localStorage.getItem('id')
+      })
+    }
+  )
+  .then(res => res.text())
+  .then(resText => {
+    rerenderLoader(false)
+
+    if(resText[0] == "{") {
+      const resJSON = JSON.parse(resText)
+
+      if(resJSON['api_status'] == 1) {
+        localStorage.removeItem('id')
+
+        redirect(`login`)
+      } else {
+        alert(resJSON['api_message'])
+      }
+    } else {
+      alert(resText)
+    }
+  })
+  .catch(err => {
+    rerenderLoader(false)
+
+    alert(err.toString())
+  })
 }

@@ -20,7 +20,7 @@
   </head>
 
   <body>
-    <div
+    <form
       class="non-session-page-container"
     >
       <p
@@ -55,6 +55,12 @@
           Submit
         </a>
       </div>
+    </form>
+
+    <div
+      class="loader-container"
+      id="loader-container"
+    >
     </div>
   </body>
 </html>
