@@ -1,6 +1,6 @@
 <?php
   if($_SERVER['SERVER_NAME'] != 'localhost') {
-    include '../helpers/connect-db.php';
+    include '../../helpers/connect-db.php';
   
     $dbconn = connect_db();
   }
@@ -13,7 +13,7 @@
   $result['api_message'] = 'Login success';
   $result['data'] = array();
   
-  include '../helpers/retrieve-post-params.php';
+  include '../../helpers/retrieve-post-params.php';
   $params = retrieve_post_params($_POST, file_get_contents('php://input'));
 
   if (!isset($params['username']) || $params['username'] == '') {

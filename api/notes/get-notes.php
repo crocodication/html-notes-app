@@ -1,6 +1,6 @@
 <?php
   if($_SERVER['SERVER_NAME'] != 'localhost') {
-    include '../helpers/connect-db.php';
+    include '../../helpers/connect-db.php';
   
     $dbconn = connect_db();
   }
