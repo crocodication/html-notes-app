@@ -15,7 +15,7 @@
   include '../helpers/retrieve-post-params.php';
   $params = retrieve_post_params($_POST, file_get_contents('php://input'));
 
-  if (!isset($params['id'])) {
+  if (!isset($params['id']) || $params['id'] == '') {
     $result['api_status'] = 0;
     $result['api_message'] = 'id parameter is required';
 
@@ -24,7 +24,7 @@
     exit;
   }
 
-  if (!isset($params['text_value'])) {
+  if (!isset($params['text_value']) || $params['text_value'] == '') {
     $result['api_status'] = 0;
     $result['api_message'] = 'text_value parameter is required';
 
@@ -42,9 +42,9 @@
     exit;
   }
 
-  $data = pg_query($dbconn, "UPDATE notes SET text_value = '" . $params['text_value'] . "' WHERE id = " . $params['id'] . ";");
+  $processing_data = pg_query($dbconn, "UPDATE notes SET text_value = '" . $params['text_value'] . "' WHERE id = " . $params['id'] . ";");
 
-  if (!$data) {
+  if (!$processing_data) {
     $result['api_status'] = 0;
     $result['api_message'] = 'Failed on processing data';
 

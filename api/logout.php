@@ -37,7 +37,7 @@
 
   if (count($data) == 0) {
     $result['api_status'] = 0;
-    $result['api_message'] = "Account with id of '" . $params['id'] . "' is not found";
+    $result['api_message'] = "Account with id of " . $params['id'] . " is not found";
 
     echo json_encode($result);
 

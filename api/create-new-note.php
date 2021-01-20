@@ -16,7 +16,7 @@
   include '../helpers/retrieve-post-params.php';
   $params = retrieve_post_params($_POST, file_get_contents('php://input'));
 
-  if (!isset($params['owner_id'])) {
+  if (!isset($params['owner_id']) || $params['owner_id'] == '') {
     $result['api_status'] = 0;
     $result['api_message'] = 'owner_id parameter is required';
 
@@ -34,9 +34,9 @@
     exit;
   }
 
-  $data = pg_query($dbconn, "INSERT INTO notes (owner_id, text_value) VALUES (" . $params['owner_id'] . ", '');");
+  $processing_data = pg_query($dbconn, "INSERT INTO notes (owner_id, text_value) VALUES (" . $params['owner_id'] . ", '');");
 
-  if (!$data) {
+  if (!$processing_data) {
     $result['api_status'] = 0;
     $result['api_message'] = 'Failed on processing data';
 

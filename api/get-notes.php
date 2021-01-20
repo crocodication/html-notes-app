@@ -15,7 +15,7 @@
   
   $params = $_GET;
 
-  if (!isset($params['owner_id'])) {
+  if (!isset($params['owner_id']) || $params['owner_id'] == '') {
     $result['api_status'] = 0;
     $result['api_message'] = 'owner_id parameter is required';
 

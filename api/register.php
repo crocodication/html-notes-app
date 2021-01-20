@@ -60,9 +60,9 @@
     exit;
   }
 
-  $data = pg_query($dbconn, "INSERT INTO users (username, password) VALUES ('" . $params['username'] . "', '" . $params['password'] . "');");
+  $processing_data = pg_query($dbconn, "INSERT INTO users (username, password) VALUES ('" . $params['username'] . "', '" . $params['password'] . "');");
 
-  if (!$data) {
+  if (!$processing_data) {
     $result['api_status'] = 0;
     $result['api_message'] = 'Failed on processing data';
 
