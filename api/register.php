@@ -11,7 +11,6 @@
   
   $result['api_status'] = 1;
   $result['api_message'] = 'Success creating account';
-  $result['data'] = array();
   
   include '../helpers/retrieve-post-params.php';
   $params = retrieve_post_params($_POST, file_get_contents('php://input'));
