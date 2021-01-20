@@ -175,8 +175,34 @@ const rerenderLoader = (isLoading) => {
     ``
 }
 
-const login = () => {
-  localStorage.setItem('id', 1)
+const login = (username, password) => {
+  fetch(
+    `${baseURL}/session/login${useURLExtension}`,
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        username,
+        password
+      })
+    }
+  )
+  .then(res => res.text())
+  .then(resText => {
+    rerenderLoader(false)
+
+    if(resText[0] == "{") {
+      const resJSON = JSON.parse(resText)
+
+      console.log(username, password, JSON.stringify(resJSON, null, 2))
+    } else {
+      console.error(resText)
+    }
+  })
+  .catch(err => {
+    rerenderLoader(false)
+
+    console.error(err.toString())
+  })
 
   redirect(`/`)
 }
