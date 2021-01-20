@@ -15,12 +15,11 @@
         redirect(`/login`)
       }
 
-      let username = '', password = '', confirm_password = ''
+      let password = '', confirm_password = ''
       
-      const submitDeleteAccount = () => deleteAccount(username, password, confirm_password)
+      const submitDeleteAccount = () => deleteAccount(password, confirm_password)
       
       window.onload = () => {
-        document.getElementById(`username-input`).addEventListener('input', event => username = event.target.value)
         document.getElementById(`password-input`).addEventListener('input', event => password = event.target.value)
         document.getElementById(`confirm-password-input`).addEventListener('input', event => confirm_password = event.target.value)
       }
@@ -40,12 +39,6 @@
       <div
         class="content-container"
       >
-        <input
-          class="non-session-input"
-          id="username-input"
-          placeholder="Username"
-        >
-
         <input
           class="non-session-input"
           id="password-input"

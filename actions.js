@@ -287,7 +287,7 @@ const logout = () => {
   })
 }
 
-const deleteAccount = (username, password, confirm_password) => {
+const deleteAccount = (password, confirm_password) => {
   rerenderLoader(true)
 
   fetch(
@@ -295,7 +295,7 @@ const deleteAccount = (username, password, confirm_password) => {
     {
       method: 'POST',
       body: JSON.stringify({
-        username,
+        id: localStorage.getItem('id'),
         password,
         confirm_password
       })
