@@ -213,10 +213,40 @@ const login = (username, password) => {
   })
 }
 
-const register = () => {
-  alert('Register')
+const register = (username, password) => {
+  rerenderLoader(true)
 
-  redirect(`/login`)
+  fetch(
+    `${baseURL}/session/register${useURLExtension}`,
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        username,
+        password
+      })
+    }
+  )
+  .then(res => res.text())
+  .then(resText => {
+    rerenderLoader(false)
+
+    if(resText[0] == "{") {
+      const resJSON = JSON.parse(resText)
+
+      if(resJSON['api_status'] == 1) {
+        redirect(`/login`)
+      }
+
+      alert(resJSON['api_message'])
+    } else {
+      alert(resText)
+    }
+  })
+  .catch(err => {
+    rerenderLoader(false)
+
+    alert(err.toString())
+  })
 }
 
 const logout = () => {
@@ -241,7 +271,7 @@ const logout = () => {
       if(resJSON['api_status'] == 1) {
         localStorage.removeItem('id')
 
-        redirect(`login`)
+        redirect(`/login`)
       } else {
         alert(resJSON['api_message'])
       }

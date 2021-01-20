@@ -16,6 +16,17 @@
       if(id != undefined) {
         redirect(`/`)
       }
+
+      let username = '', password = ''
+      
+      const submitRegister = () => {
+        login(username, password)
+      }
+      
+      window.onload = () => {
+        document.getElementById(`username-input`).addEventListener('input', event => username = event.target.value)
+        document.getElementById(`password-input`).addEventListener('input', event => password = event.target.value)
+      }
     </script>
   </head>
 
@@ -34,11 +45,13 @@
       >
         <input
           class="non-session-input"
+          id="username-input"
           placeholder="Username"
         >
 
         <input
           class="non-session-input"
+          id="password-input"
           placeholder="Password"
           type="password"
         >
@@ -50,7 +63,7 @@
         <a
           class="bottom-option"
           href="#"
-          onclick="register()"
+          onclick="submitRegister()"
         >
           Submit
         </a>
