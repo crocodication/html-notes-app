@@ -72,7 +72,7 @@
     exit;
   }
 
-  $result['data'] = pg_fetch_all(pg_query($dbconn, "SELECT * FROM users WHERE username = '" . $params['username'] . "'"));
+  $result['data'] = pg_fetch_all(pg_query($dbconn, "SELECT * FROM users WHERE username = '" . $params['username'] . "';"));
 
   echo json_encode($result);
 ?>
