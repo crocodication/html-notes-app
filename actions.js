@@ -176,6 +176,8 @@ const rerenderLoader = (isLoading) => {
 }
 
 const login = (username, password) => {
+  rerenderLoader(true)
+
   fetch(
     `${baseURL}/session/login${useURLExtension}`,
     {
@@ -189,22 +191,21 @@ const login = (username, password) => {
   .then(res => res.text())
   .then(resText => {
     rerenderLoader(false)
-    
-    console.log(username, password, resText)
 
     if(resText[0] == "{") {
       const resJSON = JSON.parse(resText)
 
-      // localStorage.setItem('id', 1)
-      // redirect(`/`)
+      localStorage.setItem('id', parseInt(resJSON['data']['id']))
+
+      redirect(`/`)
     } else {
-      console.error(resText)
+      alert(resText)
     }
   })
   .catch(err => {
     rerenderLoader(false)
 
-    console.error(err.toString())
+    alert(err.toString())
   })
 }
 
