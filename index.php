@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <html>
   <head>
     <title>
@@ -45,7 +43,7 @@
         <a
           class="bottom-option"
           href="#"
-          onclick="deleteAccount()"
+          onclick="redirect('/delete-account')"
         >
           Delete Account
         </a>

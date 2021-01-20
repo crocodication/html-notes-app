@@ -11,18 +11,18 @@
     <script>
       const id = localStorage.getItem('id')
 
-      
-      if(id != undefined) {
-        redirect(`/`)
+      if(id == undefined) {
+        redirect(`/login`)
       }
+
+      let username = '', password = '', confirm_password = ''
       
-      let username = '', password = ''
-      
-      const submitLogin = () => login(username, password)
+      const submitDeleteAccount = () => deleteAccount(username, password, confirm_password)
       
       window.onload = () => {
         document.getElementById(`username-input`).addEventListener('input', event => username = event.target.value)
         document.getElementById(`password-input`).addEventListener('input', event => password = event.target.value)
+        document.getElementById(`confirm-password-input`).addEventListener('input', event => confirm_password = event.target.value)
       }
     </script>
   </head>
@@ -34,7 +34,7 @@
       <p
         class="title"
       >
-        Welcome To Notes App
+        Delete Account
       </p>
 
       <div
@@ -52,6 +52,13 @@
           placeholder="Password"
           type="password"
         >
+
+        <input
+          class="non-session-input"
+          id="confirm-password-input"
+          placeholder="Confirm Password"
+          type="password"
+        >
       </div>
 
       <div
@@ -60,17 +67,9 @@
         <a
           class="bottom-option"
           href="#"
-          onclick="submitLogin()"
+          onclick="submitDeleteAccount()"
         >
-          Login
-        </a>
-
-        <a
-          class="bottom-option"
-          href="#"
-          onclick="redirect('/register')"
-        >
-          Register
+          Submit
         </a>
       </div>
     </form>

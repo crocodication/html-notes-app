@@ -287,6 +287,6 @@ const logout = () => {
   })
 }
 
-const deleteAccount = () => {
-  alert('Delete Account')
+const deleteAccount = (username, password, confirm_password) => {
+  alert('Delete Account', username, password, confirm_password)
 }
