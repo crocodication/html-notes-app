@@ -188,13 +188,12 @@ const login = (username, password) => {
   )
   .then(res => res.text())
   .then(resText => {
-    console.log(username, password, resText)
-    
     rerenderLoader(false)
+    
+    console.log(username, password, resText)
 
     if(resText[0] == "{") {
       const resJSON = JSON.parse(resText)
-
 
       // localStorage.setItem('id', 1)
       // redirect(`/`)

@@ -11,14 +11,19 @@
     <script src="./actions.js"></script>
 
     <script>
-      let username = '', password = ''
-
       const id = localStorage.getItem('id')
 
+      
       if(id != undefined) {
         redirect(`/`)
       }
-
+      
+      let username = '', password = ''
+      
+      const submitLogin = () => {
+        login(username, password)
+      }
+      
       window.onload = () => {
         document.getElementById(`username-input`).addEventListener('input', event => username = event.target.value)
         document.getElementById(`password-input`).addEventListener('input', event => password = event.target.value)
@@ -59,7 +64,7 @@
         <a
           class="bottom-option"
           href="#"
-          onclick="login(username, password)"
+          onclick="submitLogin()"
         >
           Login
         </a>
