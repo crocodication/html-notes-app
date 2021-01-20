@@ -10,7 +10,7 @@
   $result = array();
 
   $result['api_status'] = 1;
-  $result['api_message'] = '';
+  $result['api_message'] = 'Success editing note';
 
   include '../helpers/retrieve-post-params.php';
   $params = retrieve_post_params($_POST, file_get_contents('php://input'));

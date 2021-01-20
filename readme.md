@@ -42,13 +42,25 @@ Postman Import Link: https://www.getpostman.com/collections/5ef0343a019f2df6c1ab
   <img src="./screenshots/4.jpg">
 </p>
 
-- Run the ```Heroku CLI``` command at command prompt (cmd) or terminal to access PostgreSQL Database then create ```notes``` table like code below (You need to install Heroku CLI to do this)
+- Run the ```Heroku CLI``` command at command prompt (cmd) or terminal to access PostgreSQL Database then create ```users``` table like code below (You need to install Heroku CLI to do this)
+
+```
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(20) UNIQUE NOT NULL,
+  password VARCHAR(40) NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
+```
+
+- Then create ```notes``` table like below
 
 ```
 CREATE TABLE notes (
   ID SERIAL PRIMARY KEY,
   owner_id  INT NOT NULL,
-  text_value TEXT
+  text_value TEXT,
+  created_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
 ```
 

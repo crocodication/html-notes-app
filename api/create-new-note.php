@@ -10,7 +10,7 @@
   $result = array();
   
   $result['api_status'] = 1;
-  $result['api_message'] = '';
+  $result['api_message'] = 'Success creating note';
   $result['data'] = array();
   
   include '../helpers/retrieve-post-params.php';

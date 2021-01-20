@@ -10,7 +10,7 @@
   $result = array();
   
   $result['api_status'] = 1;
-  $result['api_message'] = '';
+  $result['api_message'] = 'Success creating account';
   $result['data'] = array();
   
   include '../helpers/retrieve-post-params.php';
@@ -71,8 +71,6 @@
 
     exit;
   }
-
-  $result['data'] = pg_fetch_all(pg_query($dbconn, "SELECT username, created_at FROM users WHERE username = '" . $params['username'] . "';"))[0];
 
   echo json_encode($result);
 ?>
