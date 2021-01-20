@@ -63,6 +63,8 @@
 
   $data = pg_query($dbconn, "INSERT INTO users (username, password) VALUES (" . $params['username'] . ", " . $params['password'] . ");");
 
+  $result['command'] = "INSERT INTO users (username, password) VALUES (" . $params['username'] . ", " . $params['password'] . ");";
+  
   if (!$data) {
     $result['api_status'] = 0;
     $result['api_message'] = 'Failed on processing data';
