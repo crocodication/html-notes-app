@@ -13,10 +13,14 @@ Web-App Link: https://html-notes-app.herokuapp.com/
   <img src="./screenshots/0.png" width=350>
 </p>
 
+<p align="center">
+  <img src="./screenshots/1.png" width=350>
+</p>
+
 Postman Import Link: https://www.getpostman.com/collections/5ef0343a019f2df6c1ab
 
 <p align="center">
-  <img src="./screenshots/1.png" width=350>
+  <img src="./screenshots/2.png" width=350>
 </p>
 
 ## How to deploy to yourself heroku platform?
@@ -27,19 +31,19 @@ Postman Import Link: https://www.getpostman.com/collections/5ef0343a019f2df6c1ab
 - Select your new app then go to ```Deploy``` tab, connect to your forked GitHub repo, don't forget check automatic deploy and press deploy branch
 
 <p align="center">
-  <img src="./screenshots/2.png">
+  <img src="./screenshots/3.png">
 </p>
 
 - Select your new app then go to ```Resources``` tab, search and add ```Heroku Postgres``` add-on
 
 <p align="center">
-  <img src="./screenshots/3.png">
+  <img src="./screenshots/4.png">
 </p>
 
 - After add-on added, click at ```Heroku Postgres``` then go to add-on ```Settings``` tab to view credentials
 
 <p align="center">
-  <img src="./screenshots/4.jpg">
+  <img src="./screenshots/5.jpg">
 </p>
 
 - Run the ```Heroku CLI``` command at command prompt (cmd) or terminal to access PostgreSQL Database then create ```users``` table like code below (You need to install Heroku CLI to do this)
@@ -69,7 +73,7 @@ CREATE TABLE notes (
 - Then go back to app details page, go to app's ```Settings``` tab then reveal config, fill config var like this using your own add-on credential
 
 <p align="center">
-  <img src="./screenshots/5.jpg">
+  <img src="./screenshots/6.jpg">
 </p>
 
 - Your web-app and API is now live, congrats!!! You can edit the codebase by yourself.
