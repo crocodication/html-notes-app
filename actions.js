@@ -195,9 +195,13 @@ const login = (username, password) => {
     if(resText[0] == "{") {
       const resJSON = JSON.parse(resText)
 
-      localStorage.setItem('id', parseInt(resJSON['data']['id']))
-
-      redirect(`/`)
+      if(resJSON['api_status'] == 1) {
+        localStorage.setItem('id', parseInt(resJSON['data']['id']))
+  
+        redirect(`/`)
+      } else {
+        alert(resJSON['api_message'])
+      }
     } else {
       alert(resText)
     }
