@@ -20,7 +20,7 @@
       let username = '', password = ''
       
       const submitRegister = () => {
-        login(username, password)
+        register(username, password)
       }
       
       window.onload = () => {
