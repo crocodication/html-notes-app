@@ -45,9 +45,9 @@
         <a
           class="bottom-option"
           href="#"
-          onclick="createNewNote()"
+          onclick="deleteAccount()"
         >
-          Create New Note
+          Delete Account
         </a>
 
         <a
@@ -56,6 +56,14 @@
           onclick="logout()"
         >
           Logout
+        </a>
+
+        <a
+          class="bottom-option"
+          href="#"
+          onclick="createNewNote()"
+        >
+          Create New Note
         </a>
       </div>
     </div>

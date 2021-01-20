@@ -286,3 +286,7 @@ const logout = () => {
     alert(err.toString())
   })
 }
+
+const deleteAccount = () => {
+  alert('Delete Account')
+}
